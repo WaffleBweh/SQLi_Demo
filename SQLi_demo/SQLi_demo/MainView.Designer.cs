@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.isShown = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
             this.rtbSql = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.isShown = new System.Windows.Forms.CheckBox();
+            this.MainTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,73 +59,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User login form";
             // 
-            // tbUsername
+            // isShown
             // 
-            this.tbUsername.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsername.Location = new System.Drawing.Point(60, 63);
-            this.tbUsername.MaxLength = 15;
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(140, 20);
-            this.tbUsername.TabIndex = 0;
-            this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.Location = new System.Drawing.Point(60, 115);
-            this.tbPassword.MaxLength = 15;
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(140, 20);
-            this.tbPassword.TabIndex = 1;
-            this.tbPassword.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Username :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Password :";
-            // 
-            // btnSend
-            // 
-            this.btnSend.Enabled = false;
-            this.btnSend.Location = new System.Drawing.Point(85, 154);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(84, 32);
-            this.btnSend.TabIndex = 4;
-            this.btnSend.Text = "Login";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // rtbSql
-            // 
-            this.rtbSql.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbSql.Location = new System.Drawing.Point(717, 37);
-            this.rtbSql.Name = "rtbSql";
-            this.rtbSql.Size = new System.Drawing.Size(247, 185);
-            this.rtbSql.TabIndex = 1;
-            this.rtbSql.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(714, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "SQL output";
+            this.isShown.AutoSize = true;
+            this.isShown.Font = new System.Drawing.Font("Webdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.isShown.Location = new System.Drawing.Point(206, 118);
+            this.isShown.Name = "isShown";
+            this.isShown.Size = new System.Drawing.Size(15, 14);
+            this.isShown.TabIndex = 7;
+            this.isShown.UseVisualStyleBackColor = true;
+            this.isShown.CheckedChanged += new System.EventHandler(this.isShown_CheckedChanged);
             // 
             // label4
             // 
@@ -136,23 +81,85 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "N";
             // 
-            // isShown
+            // btnSend
             // 
-            this.isShown.AutoSize = true;
-            this.isShown.Font = new System.Drawing.Font("Webdings", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.isShown.Location = new System.Drawing.Point(206, 118);
-            this.isShown.Name = "isShown";
-            this.isShown.Size = new System.Drawing.Size(15, 14);
-            this.isShown.TabIndex = 7;
-            this.isShown.UseVisualStyleBackColor = true;
-            this.isShown.CheckedChanged += new System.EventHandler(this.isShown_CheckedChanged);
+            this.btnSend.Enabled = false;
+            this.btnSend.Location = new System.Drawing.Point(85, 154);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(84, 32);
+            this.btnSend.TabIndex = 4;
+            this.btnSend.Text = "Login";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Password :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(60, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Username :";
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.Location = new System.Drawing.Point(60, 115);
+            this.tbPassword.MaxLength = 15;
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(140, 20);
+            this.tbPassword.TabIndex = 1;
+            this.tbPassword.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsername.Location = new System.Drawing.Point(60, 63);
+            this.tbUsername.MaxLength = 15;
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(140, 20);
+            this.tbUsername.TabIndex = 0;
+            this.tbUsername.TextChanged += new System.EventHandler(this.tbUsername_TextChanged);
+            // 
+            // rtbSql
+            // 
+            this.rtbSql.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbSql.Location = new System.Drawing.Point(581, 37);
+            this.rtbSql.Name = "rtbSql";
+            this.rtbSql.Size = new System.Drawing.Size(247, 185);
+            this.rtbSql.TabIndex = 1;
+            this.rtbSql.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(578, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "SQL output";
+            // 
+            // MainTimer
+            // 
+            this.MainTimer.Interval = 16;
+            this.MainTimer.Tick += new System.EventHandler(this.MainTimer_Tick);
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(976, 236);
+            this.ClientSize = new System.Drawing.Size(837, 236);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rtbSql);
             this.Controls.Add(this.groupBox1);
@@ -163,6 +170,7 @@
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SQLi - Demo";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainView_Paint);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -182,6 +190,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox isShown;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer MainTimer;
     }
 }
 
