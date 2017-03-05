@@ -11,7 +11,7 @@ TODO: Write usage instructions
 TODO: Write history
 
 ## Credits & License
-Copyright (C) 2017 - Loris DE BIASI and Julien SEEMULLER
+Copyright &copy; 2017 - Loris DE BIASI and Julien SEEMULLER
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
