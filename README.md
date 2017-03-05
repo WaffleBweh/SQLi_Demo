@@ -1,4 +1,4 @@
-# ${SQLi Demonstrator}
+# SQLi Demonstrator
 Small program to demonstrate the inner workings of an SQL injection.
 
 ## Installation
