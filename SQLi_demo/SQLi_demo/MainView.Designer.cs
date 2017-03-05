@@ -171,6 +171,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SQLi - Demo";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainView_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainView_MouseDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

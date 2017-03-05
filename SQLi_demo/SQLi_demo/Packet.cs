@@ -141,7 +141,7 @@ namespace SQLi_demo
         /// <param name="height"></param>
         /// <param name="headerText"></param>
         /// <param name="bodyText"></param>
-        public Packet(int x, int y, int width, int height, string username, string password ,string headerText, string bodyText)
+        public Packet(int x, int y, int width, int height, string username, string password, string headerText, string bodyText)
         {
             this.X = x;
             this.Y = y;
@@ -188,6 +188,8 @@ namespace SQLi_demo
             g.DrawRectangle(Pens.Black, this.AsRectangle());
             g.DrawLine(Pens.Black, this.X, this.Y, this.X + this.Width / 2, this.Y + this.Height / 2);
             g.DrawLine(Pens.Black, this.X + this.Width / 2, this.Y + this.Height / 2, this.X + this.Width, this.Y);
+            int fontOffset = (this.HeaderText.Length * (int)Math.Floor(SystemFonts.IconTitleFont.Size)) / 3;
+            g.DrawString(this.HeaderText, SystemFonts.IconTitleFont, Brushes.Black, this.X + (this.Width / 2) - fontOffset, this.Y + (this.Height / 2));
 
             this.Y = this.Y + (int)Math.Round(Math.Sin(this.X / 4));
         }
@@ -199,6 +201,26 @@ namespace SQLi_demo
         public Rectangle AsRectangle()
         {
             return new Rectangle(this.X, this.Y, this.Width, this.Height);
+        }
+
+        /// <summary>
+        /// Check if the given position is inside the object
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public bool isHit(int x, int y)
+        {
+            return this.AsRectangle().Contains(new Point(x, y));
+        }
+
+        /// <summary>
+        /// Show the contents of the packets when we click on them
+        /// </summary>
+        public void OnClick()
+        {
+            DisplayPacketInfo packetInfo = new DisplayPacketInfo(this);
+            packetInfo.Show();
         }
         #endregion
     }

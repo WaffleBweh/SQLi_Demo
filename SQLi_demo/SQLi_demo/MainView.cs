@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -58,7 +59,7 @@ namespace SQLi_demo
             Rectangle tmpRect = new Rectangle(startX, startY, rectWidth, rectHeight);
 
             // Create our object
-            packets.Add(new Packet(tmpRect, tbUsername.Text, tbPassword.Text, "TCP/IP", "HTTP REQUEST"));
+            packets.Add(new Packet(tmpRect, tbUsername.Text, tbPassword.Text, "TCP/IP", "STP REQUEST"));
 
             // Launch the timer
             MainTimer.Enabled = true;
@@ -118,6 +119,25 @@ namespace SQLi_demo
             foreach (var packet in packetsToRemove)
             {
                 packets.Remove(packet);
+            }
+        }
+
+        /// <summary>
+        /// Check if we click on a packet
+        /// If we click on a packet, we show its information and pause the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainView_MouseDown(object sender, MouseEventArgs e)
+        {
+            foreach (var packet in packets)
+            {
+                if (packet.isHit(e.X, e.Y))
+                {
+                    packet.OnClick();
+                    MainTimer.Stop();
+                    break;
+                }
             }
         }
     }
