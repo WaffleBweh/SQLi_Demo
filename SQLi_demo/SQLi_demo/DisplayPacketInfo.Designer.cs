@@ -68,6 +68,7 @@
             this.Name = "DisplayPacketInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DisplayPacketInfo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DisplayPacketInfo_FormClosing);
             this.ResumeLayout(false);
 
         }

@@ -95,9 +95,11 @@ namespace SQLi_demo
             // Draw the packets
             foreach (var packet in packets)
             {
-                if (packets.Count > 0)
+                packet.Draw(e.Graphics, this.Width, this.Height);
+
+                if (packet.ShouldMove)
                 {
-                    packet.Draw(e.Graphics, this.Width, this.Height);
+                    packet.Y = packet.Y + (int)Math.Round(Math.Sin(packet.X / 4));
                     packet.X++;
 
                     if (packet.X > rtbSql.Left)
@@ -108,11 +110,12 @@ namespace SQLi_demo
                         this.rtbSql.WriteToSql(packet.Username, packet.Password);
                     }
                 }
-                else
-                {
-                    // Stop the timer if there are no more packets
-                    MainTimer.Stop();
-                }
+            }
+
+            // Start the timer if there's no packets
+            if (packets.Count <= 0)
+            {
+                MainTimer.Stop();
             }
 
             // Remove packets
@@ -135,8 +138,7 @@ namespace SQLi_demo
                 if (packet.isHit(e.X, e.Y))
                 {
                     packet.OnClick();
-                    MainTimer.Stop();
-                    break;
+                    packet.ShouldMove = false;
                 }
             }
         }

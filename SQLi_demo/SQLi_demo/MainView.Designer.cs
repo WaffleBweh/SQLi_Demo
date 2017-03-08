@@ -191,7 +191,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox isShown;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Timer MainTimer;
+        public System.Windows.Forms.Timer MainTimer;
     }
 }
 

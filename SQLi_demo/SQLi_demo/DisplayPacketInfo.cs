@@ -12,14 +12,22 @@ namespace SQLi_demo
 {
     public partial class DisplayPacketInfo : Form
     {
+        Packet packet;
+
         public DisplayPacketInfo(Packet pckt)
         {
             InitializeComponent();
-
+            packet = pckt;
             // Set the form's info
             lblTitle.Text = pckt.HeaderText + " packet content";
             lblBody.Text = pckt.BodyText;
             this.Text = "Information on " + pckt.HeaderText + " packet.";
+        }
+
+        private void DisplayPacketInfo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Change the state of the packet
+            packet.RemoveInfo();
         }
     }
 }

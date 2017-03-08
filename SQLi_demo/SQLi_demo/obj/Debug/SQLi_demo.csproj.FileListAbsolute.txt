@@ -26,3 +26,13 @@ C:\Users\Julien\Desktop\SQLi_demo\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_d
 C:\Users\Julien\Desktop\SQLi_demo\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.Properties.Resources.resources
 C:\Users\Julien\Desktop\SQLi_demo\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.csproj.GenerateResource.Cache
 C:\Users\Julien\Desktop\SQLi_demo\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.DisplayPacketInfo.resources
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\bin\Debug\SQLi_demo.exe.config
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.exe
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.pdb
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\bin\Debug\SQLi_demo.exe
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\bin\Debug\SQLi_demo.pdb
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.csprojResolveAssemblyReference.cache
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.DisplayPacketInfo.resources
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.MainView.resources
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.Properties.Resources.resources
+C:\Users\Pintarde\Desktop\SQLi\SQLi_demo\SQLi_demo\SQLi_demo\obj\Debug\SQLi_demo.csproj.GenerateResource.Cache

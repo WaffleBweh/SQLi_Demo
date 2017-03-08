@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SQLi_demo
 {
@@ -23,6 +23,10 @@ namespace SQLi_demo
 
         private string _headerText;
         private string _bodyText;
+
+        private bool _shouldMove;
+
+        private DisplayPacketInfo _packetInfo;
         #endregion
 
         #region properties
@@ -129,6 +133,32 @@ namespace SQLi_demo
                 _password = value;
             }
         }
+
+        public DisplayPacketInfo PacketInfo
+        {
+            get
+            {
+                return _packetInfo;
+            }
+
+            set
+            {
+                _packetInfo = value;
+            }
+        }
+
+        public bool ShouldMove
+        {
+            get
+            {
+                return _shouldMove;
+            }
+
+            set
+            {
+                _shouldMove = value;
+            }
+        }
         #endregion
 
         #region constructors
@@ -151,6 +181,7 @@ namespace SQLi_demo
             this.Password = password;
             this.HeaderText = headerText;
             this.BodyText = bodyText;
+            this.ShouldMove = true;
         }
 
         /// <summary>
@@ -190,8 +221,6 @@ namespace SQLi_demo
             g.DrawLine(Pens.Black, this.X + this.Width / 2, this.Y + this.Height / 2, this.X + this.Width, this.Y);
             int fontOffset = (this.HeaderText.Length * (int)Math.Floor(SystemFonts.IconTitleFont.Size)) / 3;
             g.DrawString(this.HeaderText, SystemFonts.IconTitleFont, Brushes.Black, this.X + (this.Width / 2) - fontOffset, this.Y + (this.Height / 2));
-
-            this.Y = this.Y + (int)Math.Round(Math.Sin(this.X / 4));
         }
 
         /// <summary>
@@ -219,8 +248,18 @@ namespace SQLi_demo
         /// </summary>
         public void OnClick()
         {
-            DisplayPacketInfo packetInfo = new DisplayPacketInfo(this);
-            packetInfo.Show();
+            if (this.PacketInfo == null)
+            {
+                this.PacketInfo = new DisplayPacketInfo(this);
+                this.PacketInfo.Show();
+                this.ShouldMove = false;
+            }
+        }
+
+        public void RemoveInfo()
+        {
+            this.PacketInfo = null;
+            this.ShouldMove = true;
         }
         #endregion
     }
