@@ -219,7 +219,7 @@ namespace SQLi_demo
             g.DrawRectangle(Pens.Black, this.AsRectangle());
             g.DrawLine(Pens.Black, this.X, this.Y, this.X + this.Width / 2, this.Y + this.Height / 2);
             g.DrawLine(Pens.Black, this.X + this.Width / 2, this.Y + this.Height / 2, this.X + this.Width, this.Y);
-            int fontOffset = (this.HeaderText.Length * (int)Math.Floor(SystemFonts.IconTitleFont.Size)) / 3;
+            int fontOffset = (this.HeaderText.Length * (int)Math.Floor(SystemFonts.IconTitleFont.Size)) / 3 + 2;
             g.DrawString(this.HeaderText, SystemFonts.IconTitleFont, Brushes.Black, this.X + (this.Width / 2) - fontOffset, this.Y + (this.Height / 2));
         }
 

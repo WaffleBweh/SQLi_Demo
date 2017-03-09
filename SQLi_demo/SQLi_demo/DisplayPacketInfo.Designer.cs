@@ -29,42 +29,46 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblBody = new System.Windows.Forms.Label();
+            this.rtbContent = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Location = new System.Drawing.Point(12, 10);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(409, 73);
+            this.lblTitle.Size = new System.Drawing.Size(662, 73);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Packet Contents";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblBody
+            // rtbContent
             // 
-            this.lblBody.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblBody.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBody.Location = new System.Drawing.Point(12, 82);
-            this.lblBody.Name = "lblBody";
-            this.lblBody.Size = new System.Drawing.Size(409, 305);
-            this.lblBody.TabIndex = 2;
-            this.lblBody.Text = "label3";
-            this.lblBody.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rtbContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbContent.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbContent.Location = new System.Drawing.Point(12, 86);
+            this.rtbContent.Name = "rtbContent";
+            this.rtbContent.ReadOnly = true;
+            this.rtbContent.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbContent.Size = new System.Drawing.Size(662, 383);
+            this.rtbContent.TabIndex = 1;
+            this.rtbContent.Text = "";
             // 
             // DisplayPacketInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 409);
-            this.Controls.Add(this.lblBody);
+            this.ClientSize = new System.Drawing.Size(686, 482);
+            this.Controls.Add(this.rtbContent);
             this.Controls.Add(this.lblTitle);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(495, 495);
+            this.MaximumSize = new System.Drawing.Size(1000, 800);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(330, 390);
+            this.MinimumSize = new System.Drawing.Size(100, 450);
             this.Name = "DisplayPacketInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DisplayPacketInfo";
@@ -76,6 +80,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblBody;
+        private System.Windows.Forms.RichTextBox rtbContent;
     }
 }

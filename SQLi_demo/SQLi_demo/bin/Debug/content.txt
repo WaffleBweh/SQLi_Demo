@@ -1,0 +1,54 @@
+No.     Time        Source                Destination           Protocol Length Info
+     43 13.876240   192.168.1.10          192.168.1.11          HTTP     627    POST /meuporg/php/checkLogin.php HTTP/1.1  (application/x-www-form-urlencoded)
+
+Frame 43: 627 bytes on wire (5016 bits), 627 bytes captured (5016 bits)
+Ethernet II, Src: Intel_09:7d:62 (68:05:ca:09:7d:62), Dst: Intel_09:7a:84 (68:05:ca:09:7a:84)
+    Destination: Intel_09:7a:84 (68:05:ca:09:7a:84)
+        Address: Intel_09:7a:84 (68:05:ca:09:7a:84)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+    Source: Intel_09:7d:62 (68:05:ca:09:7d:62)
+        Address: Intel_09:7d:62 (68:05:ca:09:7d:62)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+    Type: IP (0x0800)
+Internet Protocol Version 4, Src: 192.168.1.10 (192.168.1.10), Dst: 192.168.1.11 (192.168.1.11)
+Transmission Control Protocol, Src Port: 50162 (50162), Dst Port: http (80), Seq: 1, Ack: 1, Len: 573
+    Source port: 50162 (50162)
+    Destination port: http (80)
+    [Stream index: 6]
+    Sequence number: 1    (relative sequence number)
+    [Next sequence number: 574    (relative sequence number)]
+    Acknowledgement number: 1    (relative ack number)
+    Header length: 20 bytes
+    Flags: 0x18 (PSH, ACK)
+    Window size value: 2053
+    [Calculated window size: 525568]
+    [Window size scaling factor: 256]
+    Checksum: 0x5a75 [validation disabled]
+    [SEQ/ACK analysis]
+Hypertext Transfer Protocol
+    POST /meuporg/php/checkLogin.php HTTP/1.1\r\n
+        [Expert Info (Chat/Sequence): POST /meuporg/php/checkLogin.php HTTP/1.1\r\n]
+            [Message: POST /meuporg/php/checkLogin.php HTTP/1.1\r\n]
+            [Severity level: Chat]
+            [Group: Sequence]
+        Request Method: POST
+        Request URI: /meuporg/php/checkLogin.php
+        Request Version: HTTP/1.1
+    Host: 192.168.1.11\r\n
+    Connection: keep-alive\r\n
+    Content-Length: 30\r\n
+    Accept: */*\r\n
+    Origin: http://192.168.1.11\r\n
+    X-Requested-With: XMLHttpRequest\r\n
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\r\n
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8\r\n
+    Referer: http://192.168.1.11/meuporg/\r\n
+    Accept-Encoding: gzip, deflate\r\n
+    Accept-Language: fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4\r\n
+    Cookie: PHPSESSID=93hclbaivirlp6qfeh0et0qr73\r\n
+    \r\n
+    [Full request URI: http://192.168.1.11/meuporg/php/checkLogin.php]
+Line-based text data: application/x-www-form-urlencoded
+

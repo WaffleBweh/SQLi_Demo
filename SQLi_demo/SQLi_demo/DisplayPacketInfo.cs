@@ -20,7 +20,7 @@ namespace SQLi_demo
             packet = pckt;
             // Set the form's info
             lblTitle.Text = pckt.HeaderText + " packet content";
-            lblBody.Text = pckt.BodyText;
+            rtbContent.Text = pckt.BodyText;
             this.Text = "Information on " + pckt.HeaderText + " packet.";
         }
 

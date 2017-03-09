@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -58,8 +59,12 @@ namespace SQLi_demo
             int startY = groupBox1.Top + (groupBox1.Height / 2) - (rectHeight / 2);
             Rectangle tmpRect = new Rectangle(startX, startY, rectWidth, rectHeight);
 
+            // Get the content for our packets
+            string content = File.ReadAllText(@"content.txt");
+            content += String.Format("username={0}&password={1}", tbUsername.Text, tbPassword.Text);
+
             // Create our object
-            packets.Add(new Packet(tmpRect, tbUsername.Text, tbPassword.Text, "TCP/IP", "STP REQUEST"));
+            packets.Add(new Packet(tmpRect, tbUsername.Text, tbPassword.Text, "HTTP", content));
 
             // Launch the timer
             MainTimer.Enabled = true;
@@ -81,7 +86,7 @@ namespace SQLi_demo
             {
                 this.tbPassword.PasswordChar = '*';
             }
-            
+
         }
 
         private void MainTimer_Tick(object sender, EventArgs e)
@@ -111,6 +116,7 @@ namespace SQLi_demo
                     }
                 }
             }
+            
 
             // Start the timer if there's no packets
             if (packets.Count <= 0)
